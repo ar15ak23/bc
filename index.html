@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://libs.zappar.com/zappar-aframe/0.3.29/zappar-aframe.js"></script>
 
     <meta charset="utf-8" />
@@ -38,7 +41,7 @@
         <!-- PRE-LOAD OUR ASSETS FOR PERFORMANCE -->
         <a-assets>
             <!-- PLANE BACKGROUND -->
-            <img id="card-plain" src="assets/BusinessCardPlain.png" />
+            <img id="card-plain" src="https://cdn.glitch.me/38658fc5-e76c-44ea-b7e8-de8424169002%2F1.png?v=1633462553974" />
 
             <!-- MENU ITEMS -->
             <img id="web-icon" src="assets/WebLaunch.png"/>
@@ -54,7 +57,9 @@
         <a-camera zappar-camera cursor="rayOrigin: mouse; fuse: false;" raycaster="objects: .collidable"></a-camera>
 
         <!-- SET UP OUR EXPERIENCE AS IMAGE TRACKING & GIVE IT AN IMAGE TO TRACK -->
-        <a-entity zappar-image="target: assets/BusinessCard.zpt">
+      <a-scene mindar-image="imageTargetSrc: https://cdn.glitch.me/38658fc5-e76c-44ea-b7e8-de8424169002%2Ftargets%20(1).mind?v=1633462504060 ;" 
+             color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
             <!-- Have a group that will only become visible when the target image comes into view-->
             <a-entity visibility-changer>
 
